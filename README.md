@@ -1,4 +1,4 @@
-# Her Voice UI
+# Movie: "Her" Voice UI
 
 ![Her Voice UI - Thinking State](public/thinking.png)
 
