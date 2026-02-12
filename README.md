@@ -1,14 +1,14 @@
 # Her Voice UI
 
-A "Her"-style voice interface powered by Google's Gemini Live API. Real-time voice conversations with a beautiful, minimal UI inspired by the movie "Her".
-
 ![Her Voice UI - Thinking State](public/thinking.png)
 
 ![Her Voice UI](https://img.shields.io/badge/Style-Her%20OS1-coral)
 ![Gemini Live](https://img.shields.io/badge/Powered%20by-Gemini%20Live-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-When I tried the Gemini Live SDK, I was impressed by how natural the voice interactions felt. It reminded me of the movie "Her" - and I wanted to see if I could bring that experience to life.
+## Genesis
+
+When I tried the Gemini Live SDK, I was impressed by how natural the voice interactions felt. It reminded me of the movie "Her" - and I wanted to see if I could bring that experience to life: real-time voice conversations with a beautiful, minimal UI.
 
 Now sharing the results in case you want this kind of UI for your [Moltbot](https://openclaw.ai/).
 
