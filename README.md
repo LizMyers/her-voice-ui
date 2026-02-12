@@ -8,7 +8,7 @@
 
 ## Genesis
 
-When I tried the Gemini Live SDK, I was impressed by how natural the voice interactions felt. It reminded me of the movie "Her" - and I wanted to see if I could bring that experience to life: real-time voice conversations with a beautiful, minimal UI.
+When I tried the Gemini Live SDK, I was impressed by how natural the voice interactions felt. It reminded me of the movie "Her" - and I wanted to see if I could bring that experience to life: real-time voice conversations with an elegant minimal UI.
 
 Now sharing the results in case you want this kind of UI for your [Moltbot](https://openclaw.ai/) 🦞.
 
