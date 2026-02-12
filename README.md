@@ -12,9 +12,9 @@ A "Her"-style voice interface powered by Google's Gemini Live API. Real-time voi
 
 This is the voice interface for [OpenClaw](https://openclaw.ai/) - the open-source personal AI assistant created by [Peter Steinberger](https://github.com/steipete) and the community.
 
-**Gemini Live SDK + OpenClaw = the HER experience.**
+**OpenClaw + Gemini Live SDK + UX polish = the HER experience.**
 
-Give your Clawdbot a voice. Talk to your AI like Joaquin Phoenix talked to Samantha.
+Give your Clawdbot a voice. Talk to your AI the way Joaquin Phoenix talked to Samantha.
 
 ## Features
 
