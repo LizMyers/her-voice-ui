@@ -80,7 +80,7 @@ body {
 }
 
 #debug-drawer.collapsed {
-    transform: translateX(-320px);
+    transform: translateX(-360px);
 }
 
 #drawer-toggle {
