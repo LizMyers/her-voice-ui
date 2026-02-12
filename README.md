@@ -27,7 +27,7 @@ A "Her"-style voice interface powered by Google's Gemini Live API. Real-time voi
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/her-voice-ui.git
+git clone https://github.com/LizMyers/her-voice-ui.git
 cd her-voice-ui
 ```
 
