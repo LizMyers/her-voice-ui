@@ -245,7 +245,7 @@ Grant microphone permissions when prompted. The browser requires HTTPS or localh
 ## Credits
 
 - **Created by:** [Liz Myers](https://github.com/LizMyers) & [Claude Opus 4.5](https://claude.ai) (Anthropic)
-- **OpenClaw:** [Peter Steinberger](https://github.com/steipete) and the [OpenClaw community](https://openclaw.ai/)
+- **OpenClaw:** [Peter Steinberger](https://github.com/steipete), Molty 🦞, and the [OpenClaw community](https://openclaw.ai/)
 - **Thinking Animation:** Based on the beautiful [Her OS1 CodePen](https://codepen.io/psyonline/pen/yayYWg) by [Siyoung Park (@psyonline)](https://codepen.io/psyonline)
 - **Design Inspiration:** The movie "Her" (2013) by Spike Jonze
 - **Voice AI:** [Google Gemini Live API](https://ai.google.dev/)
