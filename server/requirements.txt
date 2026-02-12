@@ -1,0 +1,19 @@
+# Ken Voice UI - Backend Dependencies
+
+# Web framework and WebSocket
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+
+# Google Gemini SDK
+google-genai>=0.3.0
+
+# Audio processing
+numpy>=1.24.0
+soundfile>=0.12.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Async utilities
+aiofiles>=23.0.0

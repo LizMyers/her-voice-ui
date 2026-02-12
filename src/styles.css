@@ -1,0 +1,319 @@
+/**
+ * Her Voice UI - "Her" Style
+ * Immersive coral/salmon background with white waveform
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #d1684e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Full-screen canvas */
+#waveform-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+/* Thinking animation container */
+#thinking-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background: #d1684e;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#thinking-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#thinking-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Transcript overlay (hidden by default) */
+#transcript-overlay {
+    display: none;
+}
+
+/* Debug drawer - full height left side */
+#debug-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    z-index: 200;
+    transition: transform 0.3s ease;
+}
+
+#debug-drawer.collapsed {
+    transform: translateX(-320px);
+}
+
+#drawer-toggle {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    outline: none;
+}
+
+#drawer-toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#drawer-toggle:focus {
+    outline: none;
+}
+
+#drawer-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#drawer-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#server-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#server-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #888;
+}
+
+#server-status-dot.connected {
+    background: #4ade80;
+}
+
+#server-status-dot.error {
+    background: #f87171;
+}
+
+#transcript-log {
+    flex: 1;
+    color: white;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+#transcript-log .user {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+#transcript-log .assistant {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+#transcript-log .system {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+#transcript-log .server {
+    color: rgba(100, 200, 255, 0.8);
+    font-size: 11px;
+    font-family: monospace;
+}
+
+#transcript-log .server-warn {
+    color: rgba(255, 200, 100, 0.9);
+    font-size: 11px;
+    font-family: monospace;
+}
+
+#transcript-log .server-error {
+    color: rgba(255, 120, 120, 1);
+    font-size: 11px;
+    font-family: monospace;
+}
+
+#transcript-log .entry {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Share input container */
+#share-input-container {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 8px;
+}
+
+#share-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#share-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#share-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+#share-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    outline: none;
+}
+
+#share-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#share-btn:focus {
+    outline: none;
+}
+
+#drawer-controls {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 10px;
+}
+
+.drawer-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.drawer-btn:focus {
+    outline: none;
+}
+
+.drawer-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.drawer-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.drawer-btn.primary {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.drawer-btn.primary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.drawer-btn.danger {
+    background: rgba(255, 100, 100, 0.3);
+    border-color: rgba(255, 100, 100, 0.5);
+}
+
+.drawer-btn.danger:hover:not(:disabled) {
+    background: rgba(255, 100, 100, 0.5);
+}
+
+.drawer-btn.danger.disconnected {
+    background: rgba(100, 255, 100, 0.3);
+    border-color: rgba(100, 255, 100, 0.5);
+}
+
+.drawer-btn.danger.disconnected:hover:not(:disabled) {
+    background: rgba(100, 255, 100, 0.5);
+}

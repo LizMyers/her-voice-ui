@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Her Voice UI</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <canvas id="waveform-canvas"></canvas>
+
+    <!-- Thinking animation container -->
+    <div id="thinking-container"></div>
+
+    <!-- Debug drawer - full height left side -->
+    <div id="debug-drawer">
+        <button id="drawer-toggle">◀</button>
+        <div id="drawer-header">
+            <h3>Her Voice</h3>
+            <div id="server-status">
+                <span id="server-status-dot"></span>
+                <span id="server-status-text">Disconnected</span>
+            </div>
+        </div>
+        <div id="transcript-log"></div>
+        <div id="share-input-container">
+            <input type="text" id="share-input" placeholder="Paste URL or text to share...">
+            <button id="share-btn" title="Send">➤</button>
+        </div>
+        <div id="drawer-controls">
+            <button id="disconnect-btn" class="drawer-btn danger disconnected">Connect</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html>
