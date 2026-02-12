@@ -8,6 +8,14 @@ A "Her"-style voice interface powered by Google's Gemini Live API. Real-time voi
 ![Gemini Live](https://img.shields.io/badge/Powered%20by-Gemini%20Live-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## Part of the OpenClaw Ecosystem
+
+This is the voice interface for [OpenClaw](https://openclaw.ai/) - the open-source personal AI assistant created by [Peter Steinberger](https://github.com/steipete) and the community.
+
+**Gemini Live SDK + OpenClaw = the HER experience.**
+
+Give your Clawdbot a voice. Talk to your AI like Joaquin Phoenix talked to Samantha.
+
 ## Features
 
 - **Real-time voice conversations** - Full-duplex audio streaming with Gemini's native audio model
@@ -237,6 +245,7 @@ Grant microphone permissions when prompted. The browser requires HTTPS or localh
 ## Credits
 
 - **Created by:** [Liz Myers](https://github.com/LizMyers) & [Claude Opus 4.5](https://claude.ai) (Anthropic)
+- **OpenClaw:** [Peter Steinberger](https://github.com/steipete) and the [OpenClaw community](https://openclaw.ai/)
 - **Thinking Animation:** Based on the beautiful [Her OS1 CodePen](https://codepen.io/psyonline/pen/yayYWg) by [Siyoung Park (@psyonline)](https://codepen.io/psyonline)
 - **Design Inspiration:** The movie "Her" (2013) by Spike Jonze
 - **Voice AI:** [Google Gemini Live API](https://ai.google.dev/)
