@@ -31,13 +31,22 @@ git clone https://github.com/LizMyers/her-voice-ui.git
 cd her-voice-ui
 ```
 
-### 2. Configure API Key
+### 2. Configure API Key & Voice
 
 ```bash
 cd server
 cp .env.example .env
 # Edit .env and add your GEMINI_API_KEY
 ```
+
+In your `.env` file, you can also choose a voice:
+
+```bash
+GEMINI_API_KEY=your-api-key-here
+GEMINI_VOICE=Kore  # Options: Aoede, Charon, Fenrir, Kore, Puck
+```
+
+Each voice has a distinct personality - try them out to find your favorite!
 
 ### 3. Install Dependencies
 
@@ -168,12 +177,12 @@ DEFAULT_SYSTEM_PROMPT = """You are a helpful, friendly AI assistant..."""
 ### Voice Selection
 Available voices: `Aoede`, `Charon`, `Fenrir`, `Kore`, `Puck`
 
-```python
-GeminiConfig(
-    voice="Puck",  # Change voice here
-    ...
-)
+Set in your `.env` file:
+```bash
+GEMINI_VOICE=Kore
 ```
+
+No code changes needed - just update `.env` and restart the server.
 
 ### Colors
 Edit `src/styles.css` to change the background color:

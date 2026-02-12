@@ -7,6 +7,7 @@ Architecture:
 """
 
 import asyncio
+import os
 from dataclasses import dataclass
 from enum import Enum
 
@@ -16,6 +17,10 @@ try:
 except ImportError:
     print("Please install google-genai: pip install google-genai")
     raise
+
+# Available voices - each has a distinct personality
+AVAILABLE_VOICES = ["Aoede", "Charon", "Fenrir", "Kore", "Puck"]
+DEFAULT_VOICE = os.getenv("GEMINI_VOICE", "Puck")
 
 
 class AudioFormat(Enum):
@@ -28,7 +33,7 @@ class GeminiConfig:
     """Configuration for Gemini Live session"""
     api_key: str
     model: str = "gemini-2.5-flash-preview-native-audio-dialog"
-    voice: str = "Puck"  # Aoede, Charon, Fenrir, Kore, Puck
+    voice: str = DEFAULT_VOICE  # Set via GEMINI_VOICE env var, or defaults to Puck
     system_instruction: str = ""
     input_sample_rate: int = 16000
     output_sample_rate: int = 24000  # Native audio outputs at 24kHz
