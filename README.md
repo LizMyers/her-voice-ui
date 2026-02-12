@@ -2,6 +2,8 @@
 
 A "Her"-style voice interface powered by Google's Gemini Live API. Real-time voice conversations with a beautiful, minimal UI inspired by the movie "Her".
 
+![Her Voice UI - Thinking State](public/thinking.png)
+
 ![Her Voice UI](https://img.shields.io/badge/Style-Her%20OS1-coral)
 ![Gemini Live](https://img.shields.io/badge/Powered%20by-Gemini%20Live-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
